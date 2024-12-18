@@ -1,0 +1,106 @@
+/* Reset default margin and padding for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px 20px;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Button container */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Common button styling */
+.role-button {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Worker button specific */
+.worker-button {
+    background-color: #2ecc71;
+}
+
+.worker-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-5px);
+}
+
+/* Customer button specific */
+.customer-button {
+    background-color: #e74c3c;
+}
+
+.customer-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px);
+}
+
+/* Button icon styling */
+.button-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

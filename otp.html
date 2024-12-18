@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment</title>
+    <title>OTP Verification</title>
     <style>
       h1 {
         text-align: center;
       }
-      #paymentParent {
+      #otpParent {
         padding: 10px;
         justify-content: center;
         align-items: center;
@@ -34,10 +34,6 @@
         border-radius: 7px;
       }
 
-      input[type="month"] {
-        width: 87%;
-      }
-
       input[type="submit"] {
         width: 97%;
         background-color: green;
@@ -45,42 +41,39 @@
         border-radius: 10px;
         border: none;
       }
-      #Pay:hover {
+      #submitBtn:hover {
         transform: scale(1.055);
+        background-color: rgb(55, 236, 39);
       }
     </style>
   </head>
 
   <body>
-    <h1>Payment Page</h1>
-    <div id="paymentParent">
+    <h1>OTP Verification</h1>
+    <div id="otpParent">
       <form action="">
-        <label for="number">Enter your Otp:</label> <br />
-        <input
-          type="text"
-          name=""
-          id="otp"
-          placeholder="Enter Your 4 digit Otp"
-        /><br />
-
-        <input type="submit" id="Pay" value="Submit" />
+        <label for="otp">Enter your OTP:</label> <br />
+        <input type="text" id="otp" placeholder="Enter Your 4 digit OTP" required /><br />
+        <input type="submit" id="submitBtn" value="Submit" />
       </form>
     </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", verifyOTP);
+
+      function verifyOTP(event) {
+        event.preventDefault();
+        var otpValue = document.getElementById("otp").value;
+
+        if (otpValue.length === 4) {
+          alert("Payment Done!"); // Inform the user of successful payment
+          var arr = [];
+          localStorage.setItem("items", JSON.stringify(arr));
+          localStorage.setItem("totalvalue", 0);
+          window.location.href = "orderdone.html"; // Redirect to order done page
+        } else {
+          alert("Wrong OTP. Please try again."); // Inform the user of an incorrect OTP
+        }
+      }
+    </script>
   </body>
 </html>
-<script>
-  document.querySelector("form").addEventListener("submit", done);
-  function done() {
-    event.preventDefault();
-    var number = document.getElementById("otp").value;
-    if (number.length == 4) {
-      alert("Payment Done");
-      var arr = [];
-      localStorage.setItem("items", JSON.stringify(arr));
-      localStorage.setItem("totalvalue", 0);
-      window.location.href = "index.html";
-    } else {
-      alert("Wrong Otp");
-    }
-  }
-</script>

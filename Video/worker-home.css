@@ -1,0 +1,124 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main container */
+.worker-feed {
+    max-width: 600px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Post container */
+.post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+/* Post content */
+.post-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.post-description {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Button styling */
+.interested-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 5px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.interested-btn.interested {
+    background-color: #ff4c4c;
+}
+
+.comment-btn {
+    background-color: #4ecdc4;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+    margin-top: 5px;
+}
+
+.comment-btn:hover {
+    background-color: #3bb9a1;
+}
+
+/* Comment section styling */
+.comment-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+.comments-list {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.comment {
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.comment.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}

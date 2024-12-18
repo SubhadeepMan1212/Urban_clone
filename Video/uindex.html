@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Zer0Hour</title>
+  <link rel="stylesheet" href="ustyle.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Zer0Hour</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#" class="login-btn" onclick="openModal()">Login / Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Modal for Login/Signup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Login / Sign Up</h2>
+      <input type="text" placeholder="Username" class="modal-input">
+      <input type="password" placeholder="Password" class="modal-input">
+      <button class="modal-btn">Login</button>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <main>
+    <section class="hero-section">
+      <h1>Home Services, on Demand</h1>
+      <p>Quality home services, at your convenience. Select from our variety of services.</p>
+      <input type="text" placeholder="Enter your location" class="location-input" oninput="suggestLocation()">
+      <div class="suggestions" id="suggestions"></div>
+      <button class="location-btn">Find Services</button>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-item" onclick="filterService('Plumbing')">
+          <img src="images/plumbing.jpg" alt="Plumbing">
+          <p>Plumbing</p>
+        </div>
+        <div class="service-item" onclick="filterService('Electrician')">
+          <img src="images/electrician.jpg" alt="Electrician">
+          <p>Electrician</p>
+        </div>
+        <div class="service-item" onclick="filterService('Repair')">
+          <img src="images/repair.jpg" alt="Electronics Repair">
+          <p>Electronics Repair</p>
+        </div>
+        <div class="service-item" onclick="filterService('Mechanic')">
+          <img src="images/mechanic.jpg" alt="Mechanic">
+          <p>Mechanic</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Zer0Hour. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <script src="uscript.js"></script>
+</body>
+</html>
